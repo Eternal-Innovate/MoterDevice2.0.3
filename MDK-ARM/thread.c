@@ -164,39 +164,39 @@ void thread4_entry(void *parameter)
     y = (buffer[4] << 8) | buffer[5];
 		z = (buffer[2] << 8) | buffer[3];
 		//double jiaodu = calMagnetometer(x, y);
-		++cnt;
-		if(cnt==5&&tot<1000)
-		{
-			X[tot*9+0] = (double)x;
-			X[tot*9+1] = (double)y;
-			X[tot*9+2] = (double)z;
-			++tot;
-		}
+//		++cnt;
+//		if(cnt==5&&tot<1000)
+//		{
+//			X[tot*9+0] = (double)x;
+//			X[tot*9+1] = (double)y;
+//			X[tot*9+2] = (double)z;
+//			++tot;
+//		}
 		rt_thread_delay(20);
 	}
-	LeastSquaresFit(X, beta, tot, 9);
-	flag_thread4 = 1;
-	O_x = sumx/tot;
-	O_y = sumy/tot;
-	while(1)
-	{
-		uint8_t reg = 0x03;
-		uint8_t buffer[6];
-		HAL_I2C_Master_Transmit(&hi2c2, 0x3C, &reg, 1, 100);
-		HAL_I2C_Master_Receive(&hi2c2, 0x3C	, buffer, sizeof(buffer), 100);
-		x = (buffer[0] << 8) | buffer[1];
-		y = (buffer[4] << 8) | buffer[5];
-		z = (buffer[2] << 8) | buffer[3];
-		tx = x-O_x;
-		ty = y-O_y;
-		jiaodu = calMagnetometer(tx, ty);
-		rt_thread_delay(20);
-	}
+//	LeastSquaresFit(X, beta, tot, 9);
+//	flag_thread4 = 1;
+//	O_x = sumx/tot;
+//	O_y = sumy/tot;
+//	while(1)
+//	{
+//		uint8_t reg = 0x03;
+//		uint8_t buffer[6];
+//		HAL_I2C_Master_Transmit(&hi2c2, 0x3C, &reg, 1, 100);
+//		HAL_I2C_Master_Receive(&hi2c2, 0x3C	, buffer, sizeof(buffer), 100);
+//		x = (buffer[0] << 8) | buffer[1];
+//		y = (buffer[4] << 8) | buffer[5];
+//		z = (buffer[2] << 8) | buffer[3];
+//		tx = x-O_x;
+//		ty = y-O_y;
+//		jiaodu = calMagnetometer(tx, ty);
+//		rt_thread_delay(20);
+//	}
 }
 
 void thread1_entry(void *parameter)
 {
-	//change(30, 0); //-30 , 0.1
+	change(30, 0); //-30 , 0.1
 	while(1)
 	{
 		if(flag_thread4==1)
