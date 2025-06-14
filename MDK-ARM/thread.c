@@ -2,7 +2,10 @@
 #include "math.h"
 #include "stdio.h"
 #include "rtthread.h"
+#include "arm_math.h"
+#define ARM_MATH_CM4
 /*
+
 
 		char byte[20];
 		snprintf(byte, sizeof(byte), "test:%.3f, %.3f\n", mid, yaw);
@@ -71,9 +74,10 @@ void vLRControl(double vl, double vr)
 	pidControl(vr, 3);
 }
 
+arm_cfft_radix4_instance_f32 scfft;
 void Init()
 {
-	
+	arm_cfft_radix4_init_f32(&scfft, 1024, 0, 1);
 	//Imu
 //	char byte[50];
 //  __disable_irq();
@@ -88,7 +92,7 @@ void Init()
 //	for(int i=1;i<=10000;++i)
 //	{
 //		int16_t gx = i2cRead(0xd0, 0x48)+(i2cRead(0xd0, 0x47)<<8);
-//		float dyaw = gx * N * 1000;
+//		float dyaw = gx * NN * 1000;
 //		yaw = yaw + (dyaw+mid)*0.001; //
 //		if(dyaw+mid>0) mid -= 0.01;
 //		else if(dyaw+mid<0) mid += 0.01;
@@ -130,7 +134,7 @@ void thread3_entry(void *parameter)
 //	while(1)
 //	{
 //		int16_t gx = i2cRead(0xd0, 0x48)+(i2cRead(0xd0, 0x47)<<8);
-//		float dyaw = gx * N * 1000;
+//		float dyaw = gx * NN * 1000;
 //		yaw = yaw + (dyaw+mid)*0.001;
 //		y += v*cos(yaw);
 //		x += v*sin(yaw);

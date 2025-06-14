@@ -32,4 +32,26 @@ moterdevice2.0.0/thread.o: thread.c thread.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h calculate.h \
-  usart.h i2cImu.h magnetometer.h
+  usart.h i2cImu.h magnetometer.h \
+  D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\arm_math.h \
+  D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\arm_math_types.h \
+  ..\Drivers\CMSIS\Include\cmsis_compiler.h \
+  D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\arm_math_memory.h \
+  D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\dsp\none.h \
+  D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\dsp\utils.h \
+  D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\dsp\basic_math_functions.h \
+  D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\dsp\interpolation_functions.h \
+  D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\dsp\bayes_functions.h \
+  D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\dsp\statistics_functions.h \
+  D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\dsp\fast_math_functions.h \
+  D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\dsp\matrix_functions.h \
+  D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\dsp\complex_math_functions.h \
+  D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\dsp\controller_functions.h \
+  D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\dsp\support_functions.h \
+  D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\dsp\distance_functions.h \
+  D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\dsp\svm_functions.h \
+  D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\dsp\svm_defines.h \
+  D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\dsp\transform_functions.h \
+  D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\dsp\filtering_functions.h \
+  D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\dsp\quaternion_math_functions.h \
+  D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\dsp\window_functions.h

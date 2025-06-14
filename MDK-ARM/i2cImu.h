@@ -8,7 +8,7 @@ extern "C" {
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
-#define N 6.103515625e-5
+#define NN 6.103515625e-5
 #define F 1/(1+10/200)
 
 extern I2C_HandleTypeDef hi2c1;
