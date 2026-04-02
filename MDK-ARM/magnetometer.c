@@ -1,7 +1,7 @@
 #include "magnetometer.h"
 
 //[NxM] * [MxP] 
-void matrix_muti(double *A, double *B, double *C, int n, int m, int p)
+void matrix_muti(float *A, float *B, float *C, int n, int m, int p)
 {
 	for(int i=0;i<=n-1;++i)
 	{
@@ -9,14 +9,14 @@ void matrix_muti(double *A, double *B, double *C, int n, int m, int p)
 		{
 			for(int k=0;k<=m-1;++k)
 			{
-				if(k==0) C[i*m+j] = A[i*m+k]*B[k*p+j];
-				else C[i*m+j] += A[i*m+k]*B[k*p+j];
+				if(k==0) C[i*p+j] = A[i*m+k]*B[k*p+j];
+				else C[i*p+j] += A[i*m+k]*B[k*p+j];
 			}
 		}
 	}
 }
 //[NxM] -> [MxN]
-void matrix_T(double *A, double *B, int n, int m)
+void matrix_T(float *A, float *B, int n, int m)
 {
 	for(int i=0;i<=n-1;++i)
 	{
@@ -27,9 +27,10 @@ void matrix_T(double *A, double *B, int n, int m)
 	}
 }
 //[N*N] ^ (-1)
-void matrix_inverse(double *A, double *A_inv, int n)
+void matrix_inverse(float *A, float *A_inv, int n)
 {
-	double aug[18];//3*2*3 n*2*n
+	float *aug = rt_malloc((n*n*2)*sizeof(float));
+	//float aug[n*n*2];//3*2*3 n*2*n
 	//make aug
 	for(int i=0;i<=n-1;++i)
 	{
@@ -43,11 +44,23 @@ void matrix_inverse(double *A, double *A_inv, int n)
 		}
 	}
 	
+//	debug_print("aug\n");
+//	for(int j=0;j<=n-1;++j)
+//	{
+//		for(int i=0;i<=2*n-1;++i)
+//		{
+//			debug_print("%f ", aug[j*(2*n)+i]);
+//			rt_thread_delay(20);
+//		}
+//	}
+//	debug_print("\n");
+//	rt_thread_delay(20);
+	
 	//guass  
 	for(int i=0;i<=n-1;++i)
 	{
 		int max_id = i;
-		double max_val = aug[i*2*n+i];
+		float max_val = aug[i*2*n+i];
 		for(int j=i+1;j<=n-1;++j)
 		{
 			if(max_val<aug[j*2*n+i])
@@ -59,12 +72,12 @@ void matrix_inverse(double *A, double *A_inv, int n)
 		
 		for(int k=i;k<=2*n-1;++k)
 		{
-			double tmp = aug[i*2*n+k];
+			float tmp = aug[i*2*n+k];
 			aug[i*2*n+k] = aug[max_id*2*n+k];
 			aug[max_id*2*n+k] = tmp;
 		}
 		//!0
-		double frac = aug[i*2*n+i];
+		float frac = aug[i*2*n+i];
 		for(int k=i;k<=2*n-1;++k)
 		{
 			aug[i*2*n+k] /= frac;
@@ -78,6 +91,18 @@ void matrix_inverse(double *A, double *A_inv, int n)
 				aug[j*2*n+k] -= frac*aug[i*2*n+k];
 			}
 		}
+		
+//		debug_print("aug\n");
+//		for(int j=0;j<=n-1;++j)
+//		{
+//			for(int i=0;i<=2*n-1;++i)
+//			{
+//				debug_print("%f ", aug[j*(2*n)+i]);
+//				rt_thread_delay(20);
+//			}
+//		}
+//		debug_print("\n");
+//		rt_thread_delay(20);
 	}
 	
 	for(int i=0;i<=n-1;++i)
@@ -87,13 +112,15 @@ void matrix_inverse(double *A, double *A_inv, int n)
 			A_inv[i*n+j] = aug[i*2*n+(j+n)];
 		}
 	}
+	
+	rt_free(aug);
 }
 
-void LeastSquaresFit(double *X, double *beta, int Num, int M)
+void LeastSquaresFit(float *X, float *beta, int Num, int M)
 {
-	double Xt[9000];
-	double XX[81], X_[81];
-	double B[1000];
+	float Xt[9000];
+	float XX[81], X_[81];
+	float B[1000];
 	for(int i=0;i<=999;++i)
 	{
 		B[i] = 1;

@@ -24,4 +24,11 @@ moterdevice2.0.0/magnetometer.o: magnetometer.c magnetometer.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h thread.h \
+  ..\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\include\rtthread.h \
+  ..\RT-Thread\rtconfig.h \
+  ..\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\include\rtdebug.h \
+  ..\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\include\rtdef.h \
+  ..\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\include\rtservice.h \
+  ..\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\include\rtm.h \
+  pwm.h calculate.h usart.h i2cImu.h

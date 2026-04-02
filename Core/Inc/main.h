@@ -42,7 +42,6 @@ extern "C" {
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
-extern volatile int tick_time;
 extern int counterValue[4];
 extern double counterFloat[4];
 extern volatile double counterFloatValue[4];

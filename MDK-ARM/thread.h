@@ -12,4 +12,5 @@ static struct rt_thread thread2;
 static char thread2_stack[1024];
 void thread_create();
 void vLRControl(double vl, double vr);
+void debug_print(const char *format, ...);
 #endif

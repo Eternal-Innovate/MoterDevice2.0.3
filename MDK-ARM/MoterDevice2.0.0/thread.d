@@ -54,4 +54,5 @@ moterdevice2.0.0/thread.o: thread.c thread.h \
   D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\dsp\transform_functions.h \
   D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\dsp\filtering_functions.h \
   D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\dsp\quaternion_math_functions.h \
-  D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\dsp\window_functions.h
+  D:\keil\pack\ARM\CMSIS-DSP\1.16.2\Include\dsp\window_functions.h \
+  LeastSquaresMethod.h Jacobi.h Sort.h testData.h

@@ -474,6 +474,36 @@
               <FileType>5</FileType>
               <FilePath>.\magnetometer.h</FilePath>
             </File>
+            <File>
+              <FileName>Jacobi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Jacobi.c</FilePath>
+            </File>
+            <File>
+              <FileName>Jacobi.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Jacobi.h</FilePath>
+            </File>
+            <File>
+              <FileName>Sort.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sort.c</FilePath>
+            </File>
+            <File>
+              <FileName>Sort.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Sort.h</FilePath>
+            </File>
+            <File>
+              <FileName>LeastSquaresMethod.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\LeastSquaresMethod.c</FilePath>
+            </File>
+            <File>
+              <FileName>LeastSquaresMethod.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\LeastSquaresMethod.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -653,6 +683,31 @@
               <FileName>cpuport.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/libcpu/arm/cortex-m4/cpuport.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Data</GroupName>
+          <Files>
+            <File>
+              <FileName>testData.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\testData.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Matrix</GroupName>
+          <Files>
+            <File>
+              <FileName>MatrixClass.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\MatrixClass.h</FilePath>
+            </File>
+            <File>
+              <FileName>MatrixClass.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\MatrixClass.c</FilePath>
             </File>
           </Files>
         </Group>

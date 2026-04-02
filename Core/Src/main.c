@@ -1,7 +1,6 @@
 #include "main.h"
 #include "thread.h"
 #include <math.h>
-volatile int tick_time = 0;
 volatile int flag[4] = {0, 0, 0, 0};
 volatile int32_t encoder_count[3] ={0, 0, 0}; 
 double Bi;
